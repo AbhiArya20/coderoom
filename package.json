@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "coderoom",
   "private": true,
   "scripts": {
     "build": "turbo build",
