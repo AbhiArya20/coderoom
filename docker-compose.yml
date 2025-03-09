@@ -1,0 +1,39 @@
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - coderoom
+
+  docs:
+    container_name: docs
+    build:
+      context: .
+      dockerfile: ./apps/docs/Dockerfile
+    restart: always
+    ports:
+      - 3001:3001
+    networks:
+      - coderoom
+
+  reverse-proxy:
+    container_name: reverse-proxy
+    build: ./nginx
+    depends_on:
+      - web
+      - docs
+    ports:
+      - "443:443"
+    networks:
+      - coderoom
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+
+networks:
+  coderoom:
+    driver: bridge
