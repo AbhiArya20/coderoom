@@ -1,0 +1,5 @@
+- Add Storybook
+- Add Tailwind
+- Add Shadcn
+- Add husky
+- Add docker

@@ -16,10 +16,10 @@
     "lint:docs": "turbo run docs#build",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
-
   },
   "devDependencies": {
     "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.4.4",
     "typescript": "5.8.2"
   },
