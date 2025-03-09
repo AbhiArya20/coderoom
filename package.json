@@ -3,10 +3,20 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:web": "turbo run web#build",
+    "build:docs": "turbo run docs#build",
     "dev": "turbo run dev",
+    "dev:web": "turbo run web#build",
+    "dev:docs": "turbo run docs#build",
+    "dev:affected": "turbo run dev --affected",
+    "dev:prev-commit": "turbo build --filter=[HEAD^1]",
+    "dev:main": "turbo build --filter=[main...dev]",
     "lint": "turbo run lint",
+    "lint:web": "turbo run web#build",
+    "lint:docs": "turbo run docs#build",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
+
   },
   "devDependencies": {
     "prettier": "^3.5.3",
